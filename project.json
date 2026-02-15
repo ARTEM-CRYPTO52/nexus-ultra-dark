@@ -1,0 +1,64 @@
+{
+  "project": "Nexus Ultra Dark Browser",
+  "version": "1.0",
+  "type": "Android Mobile Application",
+  "language": "Python",
+  "framework": "Kivy",
+  
+  "files": {
+    "main": "main.py",
+    "config": "buildozer.spec",
+    "docker": "Dockerfile",
+    "scripts": ["build_apk.ps1", "build_apk.bat", "menu.bat"],
+    "original": "main_qt.py",
+    "original_type": "PyQt6 Desktop App"
+  },
+  
+  "android": {
+    "app_name": "Nexus Ultra Dark",
+    "package_name": "nexusbrowser",
+    "package_domain": "org.nexus",
+    "version": "1.0",
+    "target_api": 31,
+    "min_api": 21,
+    "ndk_version": "25b",
+    "architectures": ["arm64-v8a", "armeabi-v7a"],
+    "permissions": ["INTERNET", "ACCESS_NETWORK_STATE"],
+    "fullscreen": true,
+    "orientation": "portrait"
+  },
+  
+  "features": {
+    "dark_theme": true,
+    "tabs_support": true,
+    "url_navigation": true,
+    "color_scheme": {
+      "background": "#0b0b0e",
+      "accent": "#00ffcc",
+      "dark_gray": "#111"
+    }
+  },
+  
+  "build": {
+    "method": "Docker",
+    "python_for_android": true,
+    "estimated_time": "15-30 minutes (first build)",
+    "disk_space": "2-4 GB",
+    "output": "APK file ~70-100 MB",
+    "install_target": "Android 5.0+"
+  },
+  
+  "quick_start": {
+    "step_1": "Install Docker Desktop (Windows)",
+    "step_2": "Run: .\\build_apk.ps1",
+    "step_3": "Wait for compilation",
+    "step_4": "APK ready in: bin/nexusbrowser-1.0-debug.apk"
+  },
+  
+  "support_files": {
+    "START_HERE.txt": "Quick start guide",
+    "BUILD_APK_FULL_GUIDE.txt": "Complete build instructions",
+    "ANDROID_COMPILE_GUIDE.txt": "Alternative compilation methods",
+    "README_APK.txt": "Installation guide"
+  }
+}
